@@ -1,7 +1,10 @@
 import "tailwindcss/tailwind.css";
+import { init } from '../utils/sentry'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+init()
+
+function App({ Component, pageProps, err }) {
+  return <Component {...pageProps} err={err}/>
 }
 
-export default MyApp
+export default App
