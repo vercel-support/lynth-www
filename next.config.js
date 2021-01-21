@@ -1,6 +1,5 @@
 // Use the SentryWebpack plugin to upload the source maps during build step
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
-const withSourceMaps = require('@zeit/next-source-maps')
 const {
   NEXT_PUBLIC_SENTRY_DSN: SENTRY_DSN,
   SENTRY_ORG,
@@ -20,7 +19,7 @@ const COMMIT_SHA =
 process.env.SENTRY_DSN = SENTRY_DSN
 const basePath = ''
 
-module.exports = withSourceMaps({
+module.exports = {
   productionBrowserSourceMaps: true,
   env: {
     // Make the COMMIT_SHA available to the client so that Sentry events can be
@@ -83,4 +82,4 @@ module.exports = withSourceMaps({
     return config
   },
   basePath,
-})
+}

@@ -12,7 +12,6 @@
     "@sentry/integrations": "^5.21.3",
     "@sentry/node": "^5.21.3",
     "@sentry/webpack-plugin": "^1.12.1",
-    "@zeit/next-source-maps": "0.0.3",
     "autoprefixer": "^10.1.0",
     "next": "10.0.4",
     "postcss": "^8.2.2",
