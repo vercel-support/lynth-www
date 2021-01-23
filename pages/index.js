@@ -1,24 +1,43 @@
+import {NextSeo} from "next-seo";
 import React from 'react'
 import Image from 'next/image'
 
 export default function Home() {
   return (
     <React.Fragment>
-      <div className="flex flex-col items-center justify-center h-screen bg-white dark:bg-gray-800">
+      <NextSeo
+        title="Coming soon - Lynth"
+        description="Lynth official website"
+        openGraph={{
+          url: 'https:/www.lynth.io/',
+          title: 'Lynth',
+          description: 'Lynth official website',
+          images: [
+            {
+              url: 'images/og_img.jpg',
+              width: 1200,
+              height: 627,
+              alt: 'Lynth official website',
+            }
+          ],
+          site_name: 'Lynth',
+        }}
+      />
+
+      <Image
+        src="/images/background.jpg"
+        layout="fill"
+      />
+
+      <div className="fixed top-0 left-0 flex flex-col items-center justify-center h-screen w-screen">
         <Image
-          src="/logo.svg"
-          width={450}
-          height={450}
+          src="/images/logo/logo.svg"
+          width={200}
+          height={200}
         />
-      </div>
-      <div className="fixed bottom-6 left-0 w-screen">
-        <div className="container mx-auto">
-          <section className="w-full md:col-span-3 flex flex-wrap md:flex-nowrap items-center bg-gray-900 shadow-lg rounded-2xl py-6 md:py-4 px-6 md:pr-5 space-y-4 md:space-y-0 md:space-x-8">
-            <p className="flex-auto text-white text-lg font-medium">
-              Lynth is coming soon!
-            </p>
-          </section>
-        </div>
+        <p className="text-black dark:text-white text-4xl">
+          Coming soon!
+        </p>
       </div>
     </React.Fragment>
   )

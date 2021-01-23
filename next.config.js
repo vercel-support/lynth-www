@@ -1,6 +1,7 @@
 // Use the SentryWebpack plugin to upload the source maps during build step
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
 const withSourceMaps = require('@zeit/next-source-maps')
+const withPWA = require('next-pwa')
 const {
   NEXT_PUBLIC_SENTRY_DSN: SENTRY_DSN,
   SENTRY_ORG,
@@ -20,8 +21,15 @@ const COMMIT_SHA =
 process.env.SENTRY_DSN = SENTRY_DSN
 const basePath = ''
 
-module.exports = withSourceMaps({
+module.exports = withPWA(withSourceMaps({
   productionBrowserSourceMaps: true,
+  pwa: {
+    disable: process.env.NODE_ENV === 'development',
+    register: true,
+    scope: '/',
+    dest: 'public',
+    sw: 'service-worker.js',
+  },
   env: {
     // Make the COMMIT_SHA available to the client so that Sentry events can be
     // marked for the release they belong to. It may be undefined if running
@@ -83,4 +91,4 @@ module.exports = withSourceMaps({
     return config
   },
   basePath,
-})
+}))
