@@ -28,6 +28,7 @@ export default function Home() {
         src="/images/background.jpg"
         layout="fill"
         objectFit="cover"
+        objectPosition="center center"
       />
 
       <div className="fixed top-0 left-0 flex flex-col items-center justify-center h-screen w-screen">
