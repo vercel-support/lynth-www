@@ -34,15 +34,17 @@ export default function Home() {
       />
 
       <div className="fixed overflow-auto lg:overflow-hidden top-0 left-0 flex flex-col items-center lg:justify-center h-screen w-screen">
-        <div className="flex flex-col items-center">
-          <Image
-            src="/images/logo/logo.svg"
-            width={200}
-            height={200}
-          />
-          <p className="text-black dark:text-white text-2xl tracking-widest">
-            Learn. Build. Innovate.
-          </p>
+        <div className="lg:flex flex-col items-center py-8 lg:py-0">
+          <div className="text-center">
+            <Image
+              src="/images/logo/logo.svg"
+              width={200}
+              height={200}
+            />
+            <p className="text-black dark:text-white text-2xl tracking-widest">
+              Learn. Build. Innovate.
+            </p>
+          </div>
 
           <div className="mx-auto">
             <div className="w-full grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16">
