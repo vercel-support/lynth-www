@@ -17,7 +17,7 @@ class Error extends Component {
             description: 'Lynth official website',
             images: [
               {
-                url: 'images/og_img.jpg',
+                url: 'images/background.jpg',
                 width: 1200,
                 height: 627,
                 alt: 'Lynth official website',
