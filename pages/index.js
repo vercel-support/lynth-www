@@ -45,7 +45,7 @@ export default function Home() {
             width={200}
             height={200}
           />
-          <p className="text-black dark:text-white text-2xl tracking-widest">
+          <p className="text-white text-2xl tracking-widest">
             Learn. Build. Innovate.
           </p>
         </div>
