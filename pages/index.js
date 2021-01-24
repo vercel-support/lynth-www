@@ -77,13 +77,13 @@ export default function Home() {
               </a>
             </Link>
 
-            <a className="border-2 rounded-md px-8 py-4 hover:border-red-400 cursor-pointer" target="_blank">
+            <a className="border-2 rounded-md px-8 py-4 hover:border-red-400 cursor-default" target="_blank">
               <p className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">Coming soon</p>
               <p className="text-white text-4xl">Website &rarr;</p>
               <p className="text-white text-md mt-2 font-light">Our website is under construction.</p>
             </a>
 
-            <a className="border-2 rounded-md px-8 py-4 hover:border-red-400 cursor-pointer">
+            <a className="border-2 rounded-md px-8 py-4 hover:border-red-400 cursor-default">
               <p className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">Coming soon</p>
               <p className="text-white text-4xl">Workshop &rarr;</p>
               <p className="text-white text-md mt-2 font-light">Want to learn? Click here!</p>
