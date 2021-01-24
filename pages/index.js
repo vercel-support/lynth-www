@@ -29,6 +29,7 @@ export default function Home() {
       <div className="fixed top-0 left-0 w-screen h-screen">
         <Image
           src="/images/background.jpg"
+          className="object-center object-cover pointer-events-none"
           layout="fill"
           objectFit="cover"
           objectPosition="center center"
@@ -40,6 +41,7 @@ export default function Home() {
         <div className="text-center">
           <Image
             src="/images/logo/logo.svg"
+            className="object-center pointer-events-none"
             width={200}
             height={200}
           />
