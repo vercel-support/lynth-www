@@ -35,7 +35,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="relative flex flex-col items-center lg:justify-center h-full w-full z-50 pb-10">
+      <div className="relative flex flex-col items-center lg:justify-center h-full w-full lg:h-screen z-0 pb-10">
 
         <div className="text-center">
           <Image
