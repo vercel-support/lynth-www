@@ -9,11 +9,11 @@ class Error extends Component {
       <React.Fragment>
 
         <NextSeo
-          title="Not found - Lynth"
+          title="Not found - Lynth - Learn. Build. Innovate."
           description="Lynth official website"
           openGraph={{
             url: 'https:/www.lynth.io/',
-            title: 'Lynth',
+            title: 'Lynth - Learn. Build. Innovate.',
             description: 'Lynth official website',
             images: [
               {
@@ -23,7 +23,7 @@ class Error extends Component {
                 alt: 'Lynth official website',
               }
             ],
-            site_name: 'Lynth',
+            site_name: 'Lynth - Learn. Build. Innovate.',
           }}
         />
 
@@ -35,14 +35,14 @@ class Error extends Component {
         />
 
         <div className="fixed top-0 left-0 flex flex-col items-center justify-center h-screen w-screen">
-          <p className="text-black dark:text-white text-9xl font-medium">
+          <p className="text-white text-9xl font-medium">
             404
           </p>
-          <p className="text-black dark:text-white text-4xl mt-6">
+          <p className="text-white text-4xl mt-6">
             We can't find that
           </p>
           <Link href='/'>
-            <a className="mt-6 px-6 py-2 border-2 rounded-full dark:text-white hover:bg-white hover:text-black transition-all">
+            <a className="mt-6 px-6 py-2 border-2 rounded-full text-white hover:bg-white hover:text-black transition-all">
               Home page
             </a>
           </Link>
