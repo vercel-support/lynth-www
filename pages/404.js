@@ -27,14 +27,17 @@ class Error extends Component {
           }}
         />
 
-        <Image
-          src="/images/background.jpg"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center center"
-        />
+        <div className="fixed top-0 left-0 w-screen h-screen">
+          <Image
+            src="/images/background.jpg"
+            className="object-center object-cover pointer-events-none"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center center"
+          />
+        </div>
 
-        <div className="fixed top-0 left-0 flex flex-col items-center justify-center h-screen w-screen">
+        <div className="relative flex flex-col items-center lg:justify-center h-full w-full lg:h-screen z-0">
           <p className="text-white text-9xl font-medium">
             404
           </p>
