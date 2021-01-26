@@ -16,11 +16,6 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          { isProduction && (
-            <React.Fragment>
-              <script src={'https://cmp.osano.com/6olYESNBZQxstL9/a5b16001-4cc3-40ac-ab6f-1d285a00918b/osano.js'} />
-            </React.Fragment>
-          ) }
           <link rel='manifest' href='/static/manifest.json' />
           <link rel="icon" type="image/x-icon" href="/images/logo/favicon.ico" />
           <link rel="apple-touch-icon" sizes="57x57" href="/images/logo/apple-touch-icon-57x57.png" />
@@ -63,6 +58,15 @@ class MyDocument extends Document {
                     gtag('config', '${GA_TRACKING_ID}', {
                       page_path: window.location.pathname,
                     });
+                    
+                    (function(h,o,t,j,a,r){
+                        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                        h._hjSettings={hjid:2216378,hjsv:6};
+                        a=o.getElementsByTagName('head')[0];
+                        r=o.createElement('script');r.async=1;
+                        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                        a.appendChild(r);
+                    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
                   `,
                 }}
               />
