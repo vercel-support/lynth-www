@@ -53,7 +53,7 @@ export default function Home() {
         <div className="mx-auto">
           <div className="w-full grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16">
 
-            <Link href='https://lynth.jetbrains.space'>
+            <Link href='https://lynth.space'>
               <a className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer" target="_blank">
                 <p className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
                 <p className="text-white text-4xl">Space &rarr;</p>
