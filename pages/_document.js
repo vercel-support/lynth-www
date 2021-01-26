@@ -19,11 +19,6 @@ class MyDocument extends Document {
           { isProduction && (
             <React.Fragment>
               <script src={'https://cmp.osano.com/6olYESNBZQxstL9/a5b16001-4cc3-40ac-ab6f-1d285a00918b/osano.js'} />
-              <script dangerouslySetInnerHTML={{
-                __html: `
-                    console.log("Client side only!");
-                  `,
-              }} />
             </React.Fragment>
           ) }
           <link rel='manifest' href='/static/manifest.json' />
