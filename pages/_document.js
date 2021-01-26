@@ -16,6 +16,16 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          { isProduction && (
+            <React.Fragment>
+              <script src={'https://cmp.osano.com/6olYESNBZQxstL9/a5b16001-4cc3-40ac-ab6f-1d285a00918b/osano.js'} />
+              <script dangerouslySetInnerHTML={{
+                __html: `
+                    console.log("Client side only!");
+                  `,
+              }} />
+            </React.Fragment>
+          ) }
           <link rel='manifest' href='/static/manifest.json' />
           <link rel="icon" type="image/x-icon" href="/images/logo/favicon.ico" />
           <link rel="apple-touch-icon" sizes="57x57" href="/images/logo/apple-touch-icon-57x57.png" />
