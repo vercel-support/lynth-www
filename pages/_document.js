@@ -62,7 +62,7 @@ class MyDocument extends Document {
                   `,
                 }}
               />
-              <Hotjar hjid="2216378" hjsv="6"/>
+              <Hotjar hjid={process.env.hjid} hjsv={process.env.hjsv}/>
             </React.Fragment>
           )}
         </Head>
