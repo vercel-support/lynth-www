@@ -8,21 +8,21 @@ export default function Home() {
     <React.Fragment>
 
       <NextSeo
-        title="Coming soon - Lynth - Learn. Build. Innovate."
-        description="Lynth official website"
+        title="Coming soon - Lynth - Learn. Build. Innovate. Programming learning and experience exchange community."
+        description="Programming learning and experience exchange community."
         openGraph={{
           url: 'https:/www.lynth.io/',
-          title: 'Lynth - Learn. Build. Innovate.',
-          description: 'Lynth official website',
+          title: 'Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
+          description: 'Programming learning and experience exchange community.',
           images: [
             {
               url: 'images/background.jpg',
               width: 1200,
               height: 627,
-              alt: 'Lynth official website',
+              alt: 'Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
             }
           ],
-          site_name: 'Lynth - Learn. Build. Innovate.',
+          site_name: 'Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
         }}
       />
 
@@ -33,6 +33,7 @@ export default function Home() {
           layout="fill"
           objectFit="cover"
           objectPosition="center center"
+          alt="Lynth - Learn. Build. Innovate. Programming learning and experience exchange community."
         />
       </div>
 
@@ -45,10 +46,14 @@ export default function Home() {
             className="object-center pointer-events-none"
             width={200}
             height={200}
+            alt="Lynth - Official community logotype"
           />
-          <p className="text-white text-2xl tracking-widest">
+          <h1 className="text-white text-2xl tracking-widest">
             Learn. Build. Innovate.
-          </p>
+          </h1>
+          <h2 className="text-white text-lg font-extralight mt-3">
+            Programming learning and experience exchange community.
+          </h2>
         </div>
 
         <div className="mx-auto">
@@ -57,7 +62,7 @@ export default function Home() {
             <Link href='https://lynth.space'>
               <a
                 className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
-                target="_blank">
+                target="_blank" rel="noreferrer">
                 <p
                   className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
                 <p className="text-white text-4xl">Space &rarr;</p>
@@ -68,7 +73,7 @@ export default function Home() {
             <Link href='https://discord.gg/eXxsq67kKS'>
               <a
                 className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
-                target="_blank">
+                target="_blank" rel="noreferrer">
                 <p
                   className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
                 <p className="text-white text-4xl">Discord &rarr;</p>
@@ -79,7 +84,7 @@ export default function Home() {
             <Link href='https://lynth.statuspage.io'>
               <a
                 className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
-                target="_blank">
+                target="_blank" rel="noreferrer">
                 <p
                   className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
                 <p className="text-white text-4xl">Status &rarr;</p>
@@ -87,7 +92,7 @@ export default function Home() {
               </a>
             </Link>
 
-            <a
+            <span
               className="border-2 border-transparent rounded-md px-8 py-6 hover:border-red-400 bg-gray-900 transition-all shadow-xl cursor-default"
               target="_blank">
               <p
@@ -95,16 +100,16 @@ export default function Home() {
                 soon</p>
               <p className="text-white text-4xl">Website &rarr;</p>
               <p className="text-white text-md mt-2 font-light">Our website is under construction.</p>
-            </a>
+            </span>
 
-            <a
+            <span
               className="border-2 border-transparent rounded-md px-8 py-6 hover:border-red-400 bg-gray-900 transition-all shadow-xl cursor-default">
               <p
                 className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">Coming
                 soon</p>
               <p className="text-white text-4xl">Workshop &rarr;</p>
               <p className="text-white text-md mt-2 font-light">Want to learn? Click here!</p>
-            </a>
+            </span>
 
           </div>
         </div>
