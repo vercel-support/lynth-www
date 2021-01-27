@@ -36,7 +36,8 @@ export default function Home() {
         />
       </div>
 
-      <div className="relative flex flex-col items-center lg:justify-center h-full w-full lg:h-screen z-0 pb-10 lg:pb-0">
+      <div
+        className="relative flex flex-col items-center lg:justify-center h-full w-full lg:h-screen z-0 pb-10 lg:pb-0">
 
         <div className="text-center">
           <Image
@@ -54,37 +55,53 @@ export default function Home() {
           <div className="w-full grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16">
 
             <Link href='https://lynth.space'>
-              <a className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer" target="_blank">
-                <p className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
+              <a
+                className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
+                target="_blank">
+                <p
+                  className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
                 <p className="text-white text-4xl">Space &rarr;</p>
                 <p className="text-white text-md mt-2 font-light">Join to our jetBrains Space.</p>
               </a>
             </Link>
 
             <Link href='https://discord.gg/eXxsq67kKS'>
-              <a className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer" target="_blank">
-                <p className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
+              <a
+                className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
+                target="_blank">
+                <p
+                  className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
                 <p className="text-white text-4xl">Discord &rarr;</p>
                 <p className="text-white text-md mt-2 font-light">Come and talk with us!</p>
               </a>
             </Link>
 
             <Link href='https://lynth.statuspage.io'>
-              <a className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer" target="_blank">
-                <p className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
+              <a
+                className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
+                target="_blank">
+                <p
+                  className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
                 <p className="text-white text-4xl">Status &rarr;</p>
                 <p className="text-white text-md mt-2 font-light">Check our infrastructure status.</p>
               </a>
             </Link>
 
-            <a className="border-2 border-transparent rounded-md px-8 py-6 hover:border-red-400 bg-gray-900 transition-all shadow-xl cursor-default" target="_blank">
-              <p className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">Coming soon</p>
+            <a
+              className="border-2 border-transparent rounded-md px-8 py-6 hover:border-red-400 bg-gray-900 transition-all shadow-xl cursor-default"
+              target="_blank">
+              <p
+                className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">Coming
+                soon</p>
               <p className="text-white text-4xl">Website &rarr;</p>
               <p className="text-white text-md mt-2 font-light">Our website is under construction.</p>
             </a>
 
-            <a className="border-2 border-transparent rounded-md px-8 py-6 hover:border-red-400 bg-gray-900 transition-all shadow-xl cursor-default">
-              <p className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">Coming soon</p>
+            <a
+              className="border-2 border-transparent rounded-md px-8 py-6 hover:border-red-400 bg-gray-900 transition-all shadow-xl cursor-default">
+              <p
+                className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">Coming
+                soon</p>
               <p className="text-white text-4xl">Workshop &rarr;</p>
               <p className="text-white text-md mt-2 font-light">Want to learn? Click here!</p>
             </a>

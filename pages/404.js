@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import {NextSeo} from "next-seo"
 import Image from "next/image"
 import Link from 'next/link'
@@ -45,7 +45,8 @@ class Error extends Component {
             We can't find that
           </p>
           <Link href='/'>
-            <a className="mt-6 px-6 py-2 border-2 rounded-full text-white hover:bg-white hover:text-black transition-all">
+            <a
+              className="mt-6 px-6 py-2 border-2 rounded-full text-white hover:bg-white hover:text-black transition-all">
               Home page
             </a>
           </Link>
