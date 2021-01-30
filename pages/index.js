@@ -59,7 +59,7 @@ export default function Home() {
         <div className="mx-auto">
           <div className="w-full grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16">
 
-            <Link href='https://lynth.space'>
+            <Link href='https://join.lynth.space'>
               <a
                 className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
                 target="_blank" rel="noreferrer">
@@ -70,7 +70,7 @@ export default function Home() {
               </a>
             </Link>
 
-            <Link href='https://discord.gg/eXxsq67kKS'>
+            <Link href='https://discord.lynth.io/'>
               <a
                 className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
                 target="_blank" rel="noreferrer">
