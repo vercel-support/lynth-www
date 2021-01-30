@@ -2,6 +2,28 @@ import {NextSeo} from "next-seo"
 import React from 'react'
 import Link from 'next/link'
 import Clock from 'react-live-clock'
+import styles from '../css/Status.module.css'
+
+export async function getStaticProps(context) {
+  const _lynth = await fetch(`https://6r40dly174fk.statuspage.io/api/v2/components.json`)
+  const _lynth_data = await _lynth.json()
+  let components = null;
+
+  if (!_lynth_data) {
+    return {
+      notFound: true,
+    }
+  } else {
+    components = _lynth_data.components;
+    console.log(components);
+  }
+
+  return {
+    props: {
+      components,
+    },
+  }
+}
 
 export default function Status() {
   return (
@@ -46,7 +68,7 @@ export default function Status() {
           </div>
 
           <div>
-            <p className="text-white text-4xl"><Clock format={'HH:mm:ss'} ticking={true} timezone={'UTC'} /> +00:00</p>
+            <p className="text-white text-4xl"><Clock format={'HH:mm:ss'} ticking={true} timezone={'UTC'} /> UTC+00:00</p>
           </div>
 
         </div>
@@ -58,17 +80,35 @@ export default function Status() {
 
             <div className="border-2 border-transparent rounded-md px-8 py-4 bg-gray-900 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
               <p className="text-white text-xl">Service 1</p>
-              <p className="px-3 py-1 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
+              <div className={styles.server}>
+                <ul className={styles.operational}>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
             </div>
 
             <div className="border-2 border-transparent rounded-md px-8 py-4 bg-gray-900 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
               <p className="text-white text-xl">Service 2</p>
-              <p className="px-3 py-1 inline-flex text-md leading-5 font-normal rounded-full bg-yellow-100 text-black">Incident</p>
+              <div className={styles.server}>
+                <ul className={styles.incident}>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
             </div>
 
             <div className="border-2 border-transparent rounded-md px-8 py-4 bg-gray-900 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
               <p className="text-white text-xl">Service 3</p>
-              <p className="px-3 py-1 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">Outage</p>
+              <div className={styles.server}>
+                <ul className={styles.outage}>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </div>
             </div>
 
           </div>

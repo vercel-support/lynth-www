@@ -1,0 +1,98 @@
+.server ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.server ul li:not(:last-child) {
+    margin-right: 10px;
+}
+
+ul.operational li {
+    width: 6px;
+    height: 6px;
+    float: left;
+    background: rgba(149, 244, 118, 0.6);
+}
+
+ul.operational li:first-child {
+    -webkit-animation: operational 0.14s linear infinite;
+}
+
+ul.operational li:nth-child(2) {
+    -webkit-animation: operational 0.14s 0.02s linear infinite;
+}
+
+ul.operational li:last-child {
+    -webkit-animation: operational 0.14s 0.05s linear infinite;
+}
+
+@-webkit-keyframes operational {
+    0% {
+        background: rgba(149, 244, 118, 0.6);
+    }
+    100% {
+        background: rgba(149, 244, 118, 1);
+    }
+}
+
+ul.incident li {
+    width: 6px;
+    height: 6px;
+    float: left;
+    background: rgba(245, 190, 0, 0.6);
+}
+
+ul.incident li:first-child {
+    -webkit-animation: incident 0.14s linear infinite;
+}
+
+ul.incident li:nth-child(2) {
+    -webkit-animation: incident 0.14s 0.02s linear infinite;
+}
+
+ul.incident li:last-child {
+    -webkit-animation: incident 0.14s 0.05s linear infinite;
+}
+
+@-webkit-keyframes incident {
+    0% {
+        background: rgba(245, 190, 0, 0.6);
+    }
+    100% {
+        background: rgba(245, 190, 0, 1);
+    }
+}
+
+ul.outage li {
+    width: 6px;
+    height: 6px;
+    float: left;
+    background: rgba(236, 69, 62, 0.6);
+}
+
+ul.outage li:first-child {
+    -webkit-animation: outage 0.9s linear infinite;
+}
+
+ul.outage li:nth-child(2) {
+    -webkit-animation: outage 0.9s linear infinite;
+}
+
+ul.outage li:last-child {
+    -webkit-animation: outage 0.9s linear infinite;
+}
+
+@-webkit-keyframes outage {
+    0% {
+        background: rgba(236, 69, 62, 0.6);
+    }
+    80% {
+        background: rgba(236, 69, 62, 0.6);
+    }
+    100% {
+        background: rgba(236, 69, 62, 1);
+    }
+}
