@@ -25,7 +25,7 @@ export async function getStaticProps(context) {
   }
 }
 
-export default function Status({ components }) {
+export default function Status({components}) {
   return (
     <React.Fragment>
 
@@ -61,14 +61,15 @@ export default function Status({ components }) {
 
         </div>
 
-        <div className="relative flex flex-column flex-wrap lg:flex-row lg:items-center lg:justify-between mt-6 mb-2 lg:mt-12 lg:mb-6">
+        <div
+          className="relative flex flex-column flex-wrap lg:flex-row lg:items-center lg:justify-between mt-6 mb-2 lg:mt-12 lg:mb-6">
 
           <div>
             <p className="text-white text-4xl font-light">Lynth Infrastructure</p>
           </div>
 
           <div className="w-full lg:w-auto mt-4 lg:mt-0">
-            <p className="text-white text-4xl"><Clock format={'HH:mm:ss'} ticking={true} timezone={'UTC'} /> UTC</p>
+            <p className="text-white text-4xl"><Clock format={'HH:mm:ss'} ticking={true} timezone={'UTC'}/> UTC</p>
           </div>
 
         </div>
@@ -79,7 +80,8 @@ export default function Status({ components }) {
           <div className="w-full grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
             {components.map((component) => (
-              <div key={component.id} className="border-2 border-transparent rounded-md px-8 py-4 bg-gray-900 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
+              <div key={component.id}
+                   className="border-2 border-transparent rounded-md px-8 py-4 bg-gray-900 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
                 <p className="text-white text-xl">{component.name}</p>
                 <div className={styles.server}>
                   <ul className={styles[component.status]}>
