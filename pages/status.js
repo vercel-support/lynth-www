@@ -48,7 +48,7 @@ export default function Status() {
         }}
       />
 
-      <div className="container mx-auto max-w-screen-xl mt-10">
+      <div className="container mx-auto max-w-screen-xl mt-10 px-4 lg:px-0">
 
         <div className="relative flex flex-row items-center">
 
@@ -61,14 +61,14 @@ export default function Status() {
 
         </div>
 
-        <div className="relative flex flex-row items-center justify-between mt-12 mb-6">
+        <div className="relative flex flex-column flex-wrap lg:flex-row lg:items-center lg:justify-between mt-6 mb-2 lg:mt-12 lg:mb-6">
 
           <div>
             <p className="text-white text-4xl font-light">Lynth Infrastructure</p>
           </div>
 
-          <div>
-            <p className="text-white text-4xl"><Clock format={'HH:mm:ss'} ticking={true} timezone={'UTC'} /> UTC+00:00</p>
+          <div className="w-full lg:w-auto mt-4 lg:mt-0">
+            <p className="text-white text-4xl"><Clock format={'HH:mm:ss'} ticking={true} timezone={'UTC'} /> UTC</p>
           </div>
 
         </div>
@@ -100,7 +100,7 @@ export default function Status() {
               </div>
             </div>
 
-            <div className="border-2 border-transparent rounded-md px-8 py-4 bg-gray-900 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
+            <div className="border-2 border-transparent rounded-md px-8 py-4 bg-gray-900 bg-opacity-50 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
               <p className="text-white text-xl">Service 3</p>
               <div className={styles.server}>
                 <ul className={styles.outage}>

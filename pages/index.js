@@ -40,7 +40,7 @@ export default function Home() {
       <div className="container mx-auto max-w-screen-xl lg:h-screen">
 
         <div
-          className="relative flex flex-col items-center justify-start lg:justify-center h-full w-full z-0 py-6 lg:pb-0">
+          className="relative flex flex-col items-center justify-start lg:justify-center h-full w-full z-0 py-6 px-4 lg:px-0">
 
           <div className="text-center">
             <Image

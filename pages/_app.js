@@ -15,7 +15,7 @@ function App({Component, pageProps, err}) {
       <Head>
         <meta name="viewport"
               content="minimum-scale=1, width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
-        <title>Lynth</title>
+        <title>Lynth - Learn. Build. Innovate.</title>
       </Head>
 
       <Component {...pageProps} err={err}/>
