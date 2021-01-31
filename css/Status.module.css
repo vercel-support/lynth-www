@@ -38,26 +38,26 @@ ul.operational li:last-child {
     }
 }
 
-ul.incident li {
+ul.degraded_performance li {
     width: 6px;
     height: 6px;
     float: left;
     background: rgba(245, 190, 0, 0.6);
 }
 
-ul.incident li:first-child {
-    -webkit-animation: incident 0.14s linear infinite;
+ul.degraded_performance li:first-child {
+    -webkit-animation: degraded_performance 0.14s linear infinite;
 }
 
-ul.incident li:nth-child(2) {
-    -webkit-animation: incident 0.14s 0.02s linear infinite;
+ul.degraded_performance li:nth-child(2) {
+    -webkit-animation: degraded_performance 0.14s 0.02s linear infinite;
 }
 
-ul.incident li:last-child {
-    -webkit-animation: incident 0.14s 0.05s linear infinite;
+ul.degraded_performance li:last-child {
+    -webkit-animation: degraded_performance 0.14s 0.05s linear infinite;
 }
 
-@-webkit-keyframes incident {
+@-webkit-keyframes degraded_performance {
     0% {
         background: rgba(245, 190, 0, 0.6);
     }
@@ -66,26 +66,54 @@ ul.incident li:last-child {
     }
 }
 
-ul.outage li {
+ul.partial_major_outage li {
+    width: 6px;
+    height: 6px;
+    float: left;
+    background: rgba(245, 190, 0, 0.6);
+}
+
+ul.partial_major_outage li:first-child {
+    -webkit-animation: partial_major_outage 0.14s linear infinite;
+}
+
+ul.partial_major_outage li:nth-child(2) {
+    -webkit-animation: partial_major_outage 0.14s 0.02s linear infinite;
+}
+
+ul.partial_major_outage li:last-child {
+    -webkit-animation: partial_major_outage 0.14s 0.05s linear infinite;
+}
+
+@-webkit-keyframes partial_major_outage {
+    0% {
+        background: rgba(245, 190, 0, 0.6);
+    }
+    100% {
+        background: rgba(245, 190, 0, 1);
+    }
+}
+
+ul.major_outage li {
     width: 6px;
     height: 6px;
     float: left;
     background: rgba(236, 69, 62, 0.6);
 }
 
-ul.outage li:first-child {
-    -webkit-animation: outage 0.9s linear infinite;
+ul.major_outage li:first-child {
+    -webkit-animation: major_outage 0.9s linear infinite;
 }
 
-ul.outage li:nth-child(2) {
-    -webkit-animation: outage 0.9s linear infinite;
+ul.major_outage li:nth-child(2) {
+    -webkit-animation: major_outage 0.9s linear infinite;
 }
 
-ul.outage li:last-child {
-    -webkit-animation: outage 0.9s linear infinite;
+ul.major_outage li:last-child {
+    -webkit-animation: major_outage 0.9s linear infinite;
 }
 
-@-webkit-keyframes outage {
+@-webkit-keyframes major_outage {
     0% {
         background: rgba(236, 69, 62, 0.6);
     }

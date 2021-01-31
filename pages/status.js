@@ -15,7 +15,7 @@ export async function getStaticProps(context) {
     }
   } else {
     components = _lynth_data.components;
-    console.log(components);
+    // status: operational, degraded_performance, partial_outage, major_outage
   }
 
   return {
@@ -25,7 +25,7 @@ export async function getStaticProps(context) {
   }
 }
 
-export default function Status() {
+export default function Status({ components }) {
   return (
     <React.Fragment>
 
@@ -78,38 +78,18 @@ export default function Status() {
 
           <div className="w-full grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
-            <div className="border-2 border-transparent rounded-md px-8 py-4 bg-gray-900 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
-              <p className="text-white text-xl">Service 1</p>
-              <div className={styles.server}>
-                <ul className={styles.operational}>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
+            {components.map((component) => (
+              <div className="border-2 border-transparent rounded-md px-8 py-4 bg-gray-900 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
+                <p className="text-white text-xl">{component.name}</p>
+                <div className={styles.server}>
+                  <ul className={styles[component.status]}>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-
-            <div className="border-2 border-transparent rounded-md px-8 py-4 bg-gray-900 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
-              <p className="text-white text-xl">Service 2</p>
-              <div className={styles.server}>
-                <ul className={styles.incident}>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="border-2 border-transparent rounded-md px-8 py-4 bg-gray-900 bg-opacity-50 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
-              <p className="text-white text-xl">Service 3</p>
-              <div className={styles.server}>
-                <ul className={styles.outage}>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-              </div>
-            </div>
+            ))}
 
           </div>
 
