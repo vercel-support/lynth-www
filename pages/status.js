@@ -79,7 +79,7 @@ export default function Status({ components }) {
           <div className="w-full grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
             {components.map((component) => (
-              <div className="border-2 border-transparent rounded-md px-8 py-4 bg-gray-900 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
+              <div key={component.id} className="border-2 border-transparent rounded-md px-8 py-4 bg-gray-900 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
                 <p className="text-white text-xl">{component.name}</p>
                 <div className={styles.server}>
                   <ul className={styles[component.status]}>
