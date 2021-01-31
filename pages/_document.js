@@ -2,6 +2,7 @@ import Document, {Html, Head, Main, NextScript} from 'next/document';
 import React from 'react'
 import {GA_TRACKING_ID} from '../utils/gtag'
 import Hotjar from "../utils/hotjar";
+import Optimize from "../utils/optimize";
 
 class MyDocument extends Document {
 
@@ -17,6 +18,9 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          {isProduction && (
+            <Optimize optimize_id={ process.env.optimize_id } />
+          )}
           <link rel='manifest' href='/static/manifest.json'/>
           <link rel="icon" type="image/x-icon" href="/images/logo/favicon.ico"/>
           <link rel="apple-touch-icon" sizes="57x57" href="/images/logo/apple-touch-icon-57x57.png"/>
@@ -44,11 +48,11 @@ class MyDocument extends Document {
 
           {isProduction && (
             <React.Fragment>
-              {/* Global Site Tag (gtag.js) - Google Analytics */}
               <script
                 async
                 src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
               />
+              <script src={`https://www.googleoptimize.com/optimize.js?id=OPT-NFGGTT2`}/>
               <script
                 dangerouslySetInnerHTML={{
                   __html: `
