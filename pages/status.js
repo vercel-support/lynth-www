@@ -74,7 +74,7 @@ export default function Status({ components }) {
         </div>
 
         <div
-          className="relative flex flex-col items-center lg:justify-start h-full w-full lg:h-screen z-0 py-6 lg:pb-0">
+          className="relative flex flex-col items-center lg:justify-start h-full w-full z-0 py-6 lg:pb-0">
 
           <div className="w-full grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
