@@ -37,29 +37,30 @@ export default function Home() {
         />
       </div>
 
-      <div
-        className="relative flex flex-col items-center lg:justify-center h-full w-full lg:h-screen z-0 pb-10 lg:pb-0">
+      <div className="container mx-auto max-w-screen-xl lg:h-screen">
 
-        <div className="text-center">
-          <Image
-            src="/images/logo/logo.svg"
-            className="object-center pointer-events-none"
-            width={200}
-            height={200}
-            alt="Lynth - Official community logotype"
-          />
-          <h1 className="text-white text-2xl tracking-widest">
-            Learn. Build. Innovate.
-          </h1>
-          <h2 className="text-white text-lg font-extralight mt-3">
-            Programming learning and experience exchange community.
-          </h2>
-        </div>
+        <div
+          className="relative flex flex-col items-center justify-start lg:justify-center h-full w-full z-0 py-6 px-4 lg:px-0">
 
-        <div className="mx-auto">
+          <div className="text-center">
+            <Image
+              src="/images/logo/logo.svg"
+              className="object-center pointer-events-none"
+              width={200}
+              height={200}
+              alt="Lynth - Official community logotype"
+            />
+            <h1 className="text-white text-2xl tracking-widest">
+              Learn. Build. Innovate.
+            </h1>
+            <h2 className="text-white text-lg font-extralight mt-3">
+              Programming learning and experience exchange community.
+            </h2>
+          </div>
+
           <div className="w-full grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16">
 
-            <Link href='https://join.lynth.space'>
+            <Link href='https://join.lynth.space/'>
               <a
                 className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
                 target="_blank" rel="noreferrer">
@@ -81,10 +82,10 @@ export default function Home() {
               </a>
             </Link>
 
-            <Link href='https://lynth.statuspage.io'>
+            <Link href='/status'>
               <a
                 className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
-                target="_blank" rel="noreferrer">
+                rel="noreferrer">
                 <p
                   className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
                 <p className="text-white text-4xl">Status &rarr;</p>
@@ -112,6 +113,7 @@ export default function Home() {
             </span>
 
           </div>
+
         </div>
 
       </div>
