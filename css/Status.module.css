@@ -82,7 +82,7 @@ ul.partial_outage li:nth-child(2) {
 }
 
 ul.partial_outage li:last-child {
-    -webkit-animation: partial_outage 0.14s 0.05s linear infinite;
+    -webkit-animation: partial_outage 0.9s linear infinite;
 }
 
 @-webkit-keyframes partial_outage {
