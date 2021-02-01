@@ -1,4 +1,3 @@
-import {NextSeo} from "next-seo";
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -82,8 +81,7 @@ export default function Home() {
             </Link>
 
             <span
-              className="border-2 border-transparent rounded-md px-8 py-6 hover:border-red-400 bg-gray-900 transition-all shadow-xl cursor-default"
-              target="_blank">
+              className="border-2 border-transparent rounded-md px-8 py-6 hover:border-red-400 bg-gray-900 transition-all shadow-xl cursor-default">
               <p
                 className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">{__('comingSoon')}</p>
               <p className="text-white text-4xl">{__('card4title')} &rarr;</p>
