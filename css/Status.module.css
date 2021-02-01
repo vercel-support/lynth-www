@@ -42,7 +42,7 @@ ul.degraded_performance li {
     width: 6px;
     height: 6px;
     float: left;
-    background: rgba(245, 190, 0, 0.6);
+    background: rgba(149, 244, 118, 0.6);
 }
 
 ul.degraded_performance li:first-child {
@@ -66,31 +66,34 @@ ul.degraded_performance li:last-child {
     }
 }
 
-ul.partial_major_outage li {
+ul.partial_outage li {
     width: 6px;
     height: 6px;
     float: left;
     background: rgba(245, 190, 0, 0.6);
 }
 
-ul.partial_major_outage li:first-child {
-    -webkit-animation: partial_major_outage 0.14s linear infinite;
+ul.partial_outage li:first-child {
+    -webkit-animation: operational 0.14s linear infinite;
 }
 
-ul.partial_major_outage li:nth-child(2) {
-    -webkit-animation: partial_major_outage 0.14s 0.02s linear infinite;
+ul.partial_outage li:nth-child(2) {
+    -webkit-animation: operational 0.14s 0.02s linear infinite;
 }
 
-ul.partial_major_outage li:last-child {
-    -webkit-animation: partial_major_outage 0.14s 0.05s linear infinite;
+ul.partial_outage li:last-child {
+    -webkit-animation: partial_outage 0.14s 0.05s linear infinite;
 }
 
-@-webkit-keyframes partial_major_outage {
+@-webkit-keyframes partial_outage {
     0% {
-        background: rgba(245, 190, 0, 0.6);
+        background: rgba(236, 69, 62, 0.6);
+    }
+    80% {
+        background: rgba(236, 69, 62, 0.6);
     }
     100% {
-        background: rgba(245, 190, 0, 1);
+        background: rgba(236, 69, 62, 1);
     }
 }
 
