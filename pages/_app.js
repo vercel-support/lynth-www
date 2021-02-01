@@ -12,6 +12,18 @@ Router.events.on('routeChangeComplete', (url) => gtag.pageview(url))
 
 init()
 
+export function reportWebVitals({ id, name, label, value }) {
+  if (process.env.NODE_ENV === 'production') {
+    window.gtag('event', name, {
+      event_category:
+        label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
+      value: Math.round(name === 'CLS' ? value * 1000 : value),
+      event_label: id,
+      non_interaction: true,
+    })
+  }
+}
+
 function App({Component, pageProps, err}) {
   const router = useRouter()
   const { locale, defaultLocale, pathname } = router
