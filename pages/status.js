@@ -38,11 +38,9 @@ export default function Status({_data}) {
 
       <NextSeo
         title="Infrastructure status - Lynth - Learn. Build. Innovate. Programming learning and experience exchange community."
-        description="Programming learning and experience exchange community."
         openGraph={{
-          url: 'https:/www.lynth.io/',
+          url: 'https:/www.lynth.io/status',
           title: 'Infrastructure status - Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
-          description: 'Programming learning and experience exchange community.',
           images: [
             {
               url: 'images/background.jpg',

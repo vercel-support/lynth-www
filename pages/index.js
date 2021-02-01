@@ -7,25 +7,6 @@ export default function Home() {
   return (
     <React.Fragment>
 
-      <NextSeo
-        title="Coming soon - Lynth - Learn. Build. Innovate. Programming learning and experience exchange community."
-        description="Programming learning and experience exchange community."
-        openGraph={{
-          url: 'https:/www.lynth.io/',
-          title: 'Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
-          description: 'Programming learning and experience exchange community.',
-          images: [
-            {
-              url: 'images/background.jpg',
-              width: 1200,
-              height: 627,
-              alt: 'Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
-            }
-          ],
-          site_name: 'Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
-        }}
-      />
-
       <div className="fixed top-0 left-0 w-screen h-screen">
         <Image
           src="/images/background.jpg"
