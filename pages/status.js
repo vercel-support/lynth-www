@@ -73,7 +73,7 @@ export default function Status({_data}) {
 
           <div>
             <p className="text-white text-4xl font-light">Lynth Infrastructure</p>
-            <span className="px-3 py-1 mt-2 inline-flex text-md leading-5 font-normal rounded-full bg-gray-700 text-white">{_data.lynth.status.description}</span>
+            <span className="px-4 py-2 mt-2 inline-flex text-md leading-5 font-normal rounded-full bg-gray-900 text-white">{_data.lynth.status.description}</span>
           </div>
 
           <div className="w-full lg:w-auto mt-4 lg:mt-0">
@@ -110,7 +110,7 @@ export default function Status({_data}) {
 
           <div className="flex flex-col items-start">
             <p className="text-white text-2xl font-light">Global App Delivery</p>
-            <span className="px-3 py-1 mt-2 inline-flex text-md leading-5 font-normal rounded-full bg-gray-700 text-white">{_data.gad.status.description}</span>
+            <span className="px-4 py-2 mt-2 inline-flex text-md leading-5 font-normal rounded-full bg-gray-900 text-white">{_data.gad.status.description}</span>
           </div>
 
         </div>
