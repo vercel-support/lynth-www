@@ -1,16 +1,23 @@
-import "tailwindcss/tailwind.css";
-import React from 'react';
-import Router from 'next/router'
-import Head from 'next/head';
+import "tailwindcss/tailwind.css"
+import React from 'react'
+import {useRouter, Router} from 'next/router'
+import Head from 'next/head'
 import {init} from '../utils/sentry'
 import * as gtag from '../utils/gtag'
-import {DefaultSeo} from "next-seo";
+import {DefaultSeo} from "next-seo"
+import {IntlProvider} from "react-intl"
+import * as locales from "../locale"
 
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url))
 
 init()
 
 function App({Component, pageProps, err}) {
+  const router = useRouter()
+  const { locale, defaultLocale, pathname } = router
+  const localeCopy = locales[locale]
+  const messages = localeCopy[pathname]
+
   return (
     <React.Fragment>
       <Head>
@@ -38,12 +45,18 @@ function App({Component, pageProps, err}) {
           site_name: 'Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
         }}
         languageAlternates={[
-          { hreflang: 'en', href: 'https://www.lynth.io/' },
-          { hreflang: 'pl', href: 'https://www.lynth.io/pl' }
+          {hreflang: 'en', href: 'https://www.lynth.io/'},
+          {hreflang: 'pl', href: 'https://www.lynth.io/pl'}
         ]}
       />
 
-      <Component {...pageProps} err={err}/>
+      <IntlProvider
+        locale={locale}
+        defaultLocale={defaultLocale}
+        messages={messages}
+      >
+        <Component {...pageProps} err={err}/>
+      </IntlProvider>
 
     </React.Fragment>
   )

@@ -3,6 +3,8 @@ import React from 'react'
 import Link from 'next/link'
 import Clock from 'react-live-clock'
 import styles from '../css/Status.module.css'
+import {useIntl} from "react-intl";
+import {useRouter} from "next/router";
 
 export async function getStaticProps(context) {
   const _lynth = await fetch(`https://6r40dly174fk.statuspage.io/api/v2/summary.json`)
@@ -21,7 +23,12 @@ export async function getStaticProps(context) {
       lynth: _lynth_data,
       gad: _gad_data,
     };
-    // status: operational, degraded_performance, partial_outage, major_outage
+    /**
+     * API data that need to be covered with locales:
+     *
+     * component.status: operational, degraded_performance, partial_outage, major_outage
+     * status.indicator: none, minor, major, critical
+     */
   }
 
   return {
@@ -33,6 +40,11 @@ export async function getStaticProps(context) {
 }
 
 export default function Status({_data}) {
+  const { formatMessage } = useIntl()
+  const __ = id => formatMessage({ id })
+  const router = useRouter()
+  const { locale, locales, defaultLocale } = router
+
   return (
     <React.Fragment>
 
@@ -53,14 +65,14 @@ export default function Status({_data}) {
         }}
       />
 
-      <div className="container mx-auto max-w-screen-xl my-10 px-4 lg:px-0">
+      <div className="container mx-auto max-w-screen-xl my-10 pt-4 pb-8 lg:px-0">
 
         <div className="relative flex flex-row items-center">
 
           <Link href='/'>
             <a
               className="border-2 border-transparent rounded-md px-8 py-2 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer">
-              <p className="text-white text-md font-light">&larr; Go back</p>
+              <p className="text-white text-md font-light">&larr; {__('backButton')}</p>
             </a>
           </Link>
 
@@ -71,7 +83,7 @@ export default function Status({_data}) {
 
           <div>
             <p className="text-white text-4xl font-light">Lynth Infrastructure</p>
-            <span className="px-4 py-2 mt-2 inline-flex text-md leading-5 font-normal rounded-full bg-gray-900 text-white">{_data.lynth.status.description}</span>
+            <span className="px-4 py-2 mt-2 inline-flex text-md leading-5 font-normal rounded-full bg-gray-900 text-white">{__(_data.lynth.status.indicator)}</span>
           </div>
 
           <div className="w-full lg:w-auto mt-4 lg:mt-0">
@@ -108,7 +120,7 @@ export default function Status({_data}) {
 
           <div className="flex flex-col items-start">
             <p className="text-white text-2xl font-light">Global App Delivery</p>
-            <span className="px-4 py-2 mt-2 inline-flex text-md leading-5 font-normal rounded-full bg-gray-900 text-white">{_data.gad.status.description}</span>
+            <span className="px-4 py-2 mt-2 inline-flex text-md leading-5 font-normal rounded-full bg-gray-900 text-white">{__(_data.gad.status.indicator)}</span>
           </div>
 
         </div>
