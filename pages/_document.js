@@ -21,6 +21,7 @@ class MyDocument extends Document {
           {isProduction && (
             <Optimize optimize_id={ process.env.optimize_id } />
           )}
+          <link rel="preconnect" href="https://www.lynth.io/_next/static/" crossOrigin=""/>
           <link rel='manifest' href='/static/manifest.json'/>
           <link rel="icon" type="image/x-icon" href="/images/logo/favicon.ico"/>
           <link rel="apple-touch-icon" sizes="57x57" href="/images/logo/apple-touch-icon-57x57.png"/>
@@ -44,7 +45,6 @@ class MyDocument extends Document {
           <meta name="msapplication-square150x150logo" content="/images/logo/mstile-150x150.png"/>
           <meta name="msapplication-wide310x150logo" content="/images/logo/mstile-310x150.png"/>
           <meta name="msapplication-square310x310logo" content="/images/logo/mstile-310x310.png"/>
-          <link rel="preconnect" href="https://www.lynth.io/_next/static/" crossOrigin=""/>
 
           {isProduction && (
             <React.Fragment>

@@ -23,6 +23,11 @@ const basePath = ''
 
 module.exports = withPWA(withSourceMaps({
   productionBrowserSourceMaps: true,
+  i18n: {
+    locales: ['en', 'pl'],
+    defaultLocale: 'en',
+    localeDetection: true,
+  },
   pwa: {
     disable: process.env.NODE_ENV === 'development',
     register: true,

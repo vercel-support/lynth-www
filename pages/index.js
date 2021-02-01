@@ -2,29 +2,17 @@ import {NextSeo} from "next-seo";
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from "next/router"
+import { useIntl } from "react-intl"
 
 export default function Home() {
+  const { formatMessage } = useIntl()
+  const __ = id => formatMessage({ id })
+  const router = useRouter()
+  const { locale, locales, defaultLocale } = router
+
   return (
     <React.Fragment>
-
-      <NextSeo
-        title="Coming soon - Lynth - Learn. Build. Innovate. Programming learning and experience exchange community."
-        description="Programming learning and experience exchange community."
-        openGraph={{
-          url: 'https:/www.lynth.io/',
-          title: 'Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
-          description: 'Programming learning and experience exchange community.',
-          images: [
-            {
-              url: 'images/background.jpg',
-              width: 1200,
-              height: 627,
-              alt: 'Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
-            }
-          ],
-          site_name: 'Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
-        }}
-      />
 
       <div className="fixed top-0 left-0 w-screen h-screen">
         <Image
@@ -54,7 +42,7 @@ export default function Home() {
               Learn. Build. Innovate.
             </h1>
             <h2 className="text-white text-lg font-extralight mt-3">
-              Programming learning and experience exchange community.
+              {__('description')}
             </h2>
           </div>
 
@@ -66,8 +54,8 @@ export default function Home() {
                 target="_blank" rel="noreferrer">
                 <p
                   className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
-                <p className="text-white text-4xl">Space &rarr;</p>
-                <p className="text-white text-md mt-2 font-light">Join to our jetBrains Space.</p>
+                <p className="text-white text-4xl">{__('card1title')} &rarr;</p>
+                <p className="text-white text-md mt-2 font-light">{__('card1subtitle')}</p>
               </a>
             </Link>
 
@@ -77,8 +65,8 @@ export default function Home() {
                 target="_blank" rel="noreferrer">
                 <p
                   className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
-                <p className="text-white text-4xl">Discord &rarr;</p>
-                <p className="text-white text-md mt-2 font-light">Come and talk with us!</p>
+                <p className="text-white text-4xl">{__('card2title')} &rarr;</p>
+                <p className="text-white text-md mt-2 font-light">{__('card2subtitle')}</p>
               </a>
             </Link>
 
@@ -88,8 +76,8 @@ export default function Home() {
                 rel="noreferrer">
                 <p
                   className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
-                <p className="text-white text-4xl">Status &rarr;</p>
-                <p className="text-white text-md mt-2 font-light">Check our infrastructure status.</p>
+                <p className="text-white text-4xl">{__('card3title')} &rarr;</p>
+                <p className="text-white text-md mt-2 font-light">{__('card3subtitle')}</p>
               </a>
             </Link>
 
@@ -99,8 +87,8 @@ export default function Home() {
               <p
                 className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">Coming
                 soon</p>
-              <p className="text-white text-4xl">Website &rarr;</p>
-              <p className="text-white text-md mt-2 font-light">Our website is under construction.</p>
+              <p className="text-white text-4xl">{__('card4title')} &rarr;</p>
+              <p className="text-white text-md mt-2 font-light">{__('card4subtitle')}</p>
             </span>
 
             <span
@@ -108,8 +96,8 @@ export default function Home() {
               <p
                 className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">Coming
                 soon</p>
-              <p className="text-white text-4xl">Workshop &rarr;</p>
-              <p className="text-white text-md mt-2 font-light">Want to learn? Click here!</p>
+              <p className="text-white text-4xl">{__('card5title')} &rarr;</p>
+              <p className="text-white text-md mt-2 font-light">{__('card5subtitle')}</p>
             </span>
 
           </div>
