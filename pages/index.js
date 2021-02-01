@@ -53,7 +53,7 @@ export default function Home() {
                 className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
                 target="_blank" rel="noreferrer">
                 <p
-                  className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
+                  className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">{__('available')}</p>
                 <p className="text-white text-4xl">{__('card1title')} &rarr;</p>
                 <p className="text-white text-md mt-2 font-light">{__('card1subtitle')}</p>
               </a>
@@ -64,7 +64,7 @@ export default function Home() {
                 className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
                 target="_blank" rel="noreferrer">
                 <p
-                  className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
+                  className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">{__('available')}</p>
                 <p className="text-white text-4xl">{__('card2title')} &rarr;</p>
                 <p className="text-white text-md mt-2 font-light">{__('card2subtitle')}</p>
               </a>
@@ -75,7 +75,7 @@ export default function Home() {
                 className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
                 rel="noreferrer">
                 <p
-                  className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">Available</p>
+                  className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">{__('available')}</p>
                 <p className="text-white text-4xl">{__('card3title')} &rarr;</p>
                 <p className="text-white text-md mt-2 font-light">{__('card3subtitle')}</p>
               </a>
@@ -85,8 +85,7 @@ export default function Home() {
               className="border-2 border-transparent rounded-md px-8 py-6 hover:border-red-400 bg-gray-900 transition-all shadow-xl cursor-default"
               target="_blank">
               <p
-                className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">Coming
-                soon</p>
+                className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">{__('comingSoon')}</p>
               <p className="text-white text-4xl">{__('card4title')} &rarr;</p>
               <p className="text-white text-md mt-2 font-light">{__('card4subtitle')}</p>
             </span>
@@ -94,8 +93,7 @@ export default function Home() {
             <span
               className="border-2 border-transparent rounded-md px-8 py-6 hover:border-red-400 bg-gray-900 transition-all shadow-xl cursor-default">
               <p
-                className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">Coming
-                soon</p>
+                className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-red-100 text-black">{__('comingSoon')}</p>
               <p className="text-white text-4xl">{__('card5title')} &rarr;</p>
               <p className="text-white text-md mt-2 font-light">{__('card5subtitle')}</p>
             </span>
