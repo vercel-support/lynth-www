@@ -19,7 +19,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {isProduction && (
-            <Optimize optimize_id={ process.env.optimize_id } />
+            <Optimize optimize_id={process.env.optimize_id}/>
           )}
           <link rel="preconnect" href="https://www.lynth.io/_next/static/" crossOrigin=""/>
           <link rel='manifest' href='/static/manifest.json'/>
@@ -52,7 +52,17 @@ class MyDocument extends Document {
                 async
                 src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
               />
-              <script src={`https://www.googleoptimize.com/optimize.js?id=OPT-NFGGTT2`}/>
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer','${process.env.gtm_id}');
+                  `,
+                }}
+              />
               <script
                 dangerouslySetInnerHTML={{
                   __html: `
@@ -72,6 +82,12 @@ class MyDocument extends Document {
         </Head>
 
         <body className="bg-black">
+        {isProduction && (
+          <noscript>
+            <iframe src={"https://www.googletagmanager.com/ns.html?id=" + process.env.gtm_id}
+                    height="0" width="0" style="display:none;visibility:hidden"/>
+          </noscript>
+        )}
 
         <Main/>
         <NextScript/>
