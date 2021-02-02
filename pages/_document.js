@@ -85,7 +85,7 @@ class MyDocument extends Document {
         {isProduction && (
           <noscript>
             <iframe src={"https://www.googletagmanager.com/ns.html?id=" + process.env.gtm_id}
-                    height="0" width="0" style="display:none;visibility:hidden"/>
+                    height="0" width="0" style={{display:'none', visibility:'hidden'}}/>
           </noscript>
         )}
 
