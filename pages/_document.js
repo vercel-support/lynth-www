@@ -22,6 +22,9 @@ class MyDocument extends Document {
             <Optimize optimize_id={process.env.optimize_id}/>
           )}
           <link rel="preconnect" href="https://www.lynth.io/_next/static/" crossOrigin=""/>
+          <link rel="preconnect" href="https://in.hotjar.com" crossOrigin=""/>
+          <link rel="preconnect" href="https://ws8.hotjar.com" crossOrigin=""/>
+          <link rel="preconnect" href="https://o259404.ingest.sentry.io" crossOrigin=""/>
           <link rel='manifest' href='/static/manifest.json'/>
           <link rel="icon" type="image/x-icon" href="/images/logo/favicon.ico"/>
           <link rel="apple-touch-icon" sizes="57x57" href="/images/logo/apple-touch-icon-57x57.png"/>
