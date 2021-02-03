@@ -1,6 +1,5 @@
 import Document, {Html, Head, Main, NextScript} from 'next/document';
 import React from 'react'
-import {GA_CONFIG, UA_CONFIG} from '../utils/gtag'
 import Hotjar from "../utils/hotjar";
 import Optimize from "../utils/optimize";
 
@@ -16,7 +15,7 @@ class MyDocument extends Document {
     const {isProduction} = this.props
 
     return (
-      <Html lang="en">
+      <Html lang="en" style={{background: '#000000'}}>
         <Head>
           {isProduction && (
             <Optimize optimize_id={process.env.optimize_id}/>
@@ -72,7 +71,9 @@ class MyDocument extends Document {
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
-                    ` + GA_CONFIG + ` ` + UA_CONFIG,
+                    
+                    gtag('config', '${process.env.GA_TRACKING_ID}', {page_path: window.location.pathname,});
+                    `,
                 }}
               />
               <Hotjar hjid={process.env.hjid} hjsv={process.env.hjsv}/>

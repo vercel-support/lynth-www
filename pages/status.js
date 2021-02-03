@@ -49,19 +49,19 @@ export default function Status({_data}) {
     <React.Fragment>
 
       <NextSeo
-        title="Infrastructure status - Lynth - Learn. Build. Innovate. Programming learning and experience exchange community."
+        title="Infrastructure status - Lynth - Learn. Build. Innovate."
         openGraph={{
           url: 'https:/www.lynth.io/status',
-          title: 'Infrastructure status - Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
+          title: 'Infrastructure status - Lynth - Learn. Build. Innovate.',
           images: [
             {
               url: 'images/background.jpg',
               width: 1200,
               height: 627,
-              alt: 'Infrastructure status - Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
+              alt: 'Infrastructure status - Lynth - Learn. Build. Innovate.',
             }
           ],
-          site_name: 'Infrastructure status - Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
+          site_name: 'Infrastructure status - Lynth - Learn. Build. Innovate.',
         }}
       />
 
