@@ -10,15 +10,17 @@ import * as locales from "../locale"
 
 init()
 
-export function reportWebVitals({ id, name, label, value }) {
+export function reportWebVitals(metric) {
   if (process.env.NODE_ENV === 'production') {
     window.gtag('event', name, {
       event_category:
-        label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
-      value: Math.round(name === 'CLS' ? value * 1000 : value),
-      event_label: id,
+        metric.label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
+      value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+      event_label: metric.id,
       non_interaction: true,
     })
+  } else {
+    console.log(metric)
   }
 }
 
