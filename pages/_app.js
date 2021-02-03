@@ -1,14 +1,12 @@
 import "tailwindcss/tailwind.css"
-import React from 'react'
-import {useRouter, Router} from 'next/router'
+import React, {useEffect} from 'react'
+import {useRouter} from 'next/router'
 import Head from 'next/head'
 import {init} from '../utils/sentry'
 import * as gtag from '../utils/gtag'
 import {DefaultSeo} from "next-seo"
 import {IntlProvider} from "react-intl"
 import * as locales from "../locale"
-
-Router.events.on('routeChangeComplete', (url) => gtag.pageview(url))
 
 init()
 
@@ -29,6 +27,16 @@ function App({Component, pageProps, err}) {
   const { locale, defaultLocale, pathname } = router
   const localeCopy = locales[locale]
   const messages = localeCopy[pathname]
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
 
   return (
     <React.Fragment>
