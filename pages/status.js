@@ -82,7 +82,7 @@ export default function Status({_data}) {
           className="relative flex flex-column flex-wrap lg:flex-row lg:items-start lg:justify-between mt-6 mb-2 lg:mt-12 lg:mb-6">
 
           <div>
-            <p className="text-white text-4xl font-light">Lynth Infrastructure</p>
+            <h1 className="text-white text-4xl font-light">Lynth Infrastructure</h1>
             <span className="px-4 py-2 mt-2 inline-flex text-md leading-5 font-normal rounded-full bg-gray-900 text-white">{__(_data.lynth.status.indicator)}</span>
           </div>
 
@@ -119,7 +119,7 @@ export default function Status({_data}) {
           className="relative flex flex-column flex-wrap lg:flex-row lg:items-center lg:justify-between mt-4 mb-1 lg:mt-8 lg:mb-3">
 
           <div className="flex flex-col items-start">
-            <p className="text-white text-2xl font-light">Global App Delivery</p>
+            <h2 className="text-white text-2xl font-light">Global App Delivery</h2>
             <span className="px-4 py-2 mt-2 inline-flex text-md leading-5 font-normal rounded-full bg-gray-900 text-white">{__(_data.gad.status.indicator)}</span>
           </div>
 
