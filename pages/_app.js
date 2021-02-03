@@ -10,15 +10,17 @@ import * as locales from "../locale"
 
 init()
 
-export function reportWebVitals({ id, name, label, value }) {
+export function reportWebVitals(metric) {
   if (process.env.NODE_ENV === 'production') {
     window.gtag('event', name, {
       event_category:
-        label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
-      value: Math.round(name === 'CLS' ? value * 1000 : value),
-      event_label: id,
+        metric.label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
+      value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+      event_label: metric.id,
       non_interaction: true,
     })
+  } else {
+    console.log(metric)
   }
 }
 
@@ -31,6 +33,11 @@ function App({Component, pageProps, err}) {
   useEffect(() => {
     const handleRouteChange = (url) => {
       gtag.pageview(url)
+      gtag.event({
+        action: 'route_change',
+        category: 'routing',
+        label: url
+      })
     }
     router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
@@ -47,26 +54,26 @@ function App({Component, pageProps, err}) {
       </Head>
 
       <DefaultSeo
-        title="Lynth - Learn. Build. Innovate. Programming learning and experience exchange community."
+        title="Lynth - Learn. Build. Innovate."
         description="Programming learning and experience exchange community."
         openGraph={{
           url: 'https:/www.lynth.io/',
           locale: 'en_US',
-          title: 'Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
+          title: 'Lynth - Learn. Build. Innovate.',
           description: 'Programming learning and experience exchange community.',
           images: [
             {
               url: 'images/background.jpg',
               width: 1200,
               height: 627,
-              alt: 'Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
+              alt: 'Lynth - Learn. Build. Innovate.',
             }
           ],
-          site_name: 'Lynth - Learn. Build. Innovate. Programming learning and experience exchange community.',
+          site_name: 'Lynth - Learn. Build. Innovate.',
         }}
         languageAlternates={[
-          {hreflang: 'en', href: 'https://www.lynth.io/'},
-          {hreflang: 'pl', href: 'https://www.lynth.io/pl'}
+          {hreflang: 'en', href: '/'},
+          {hreflang: 'pl', href: '/pl'}
         ]}
       />
 
