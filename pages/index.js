@@ -37,12 +37,16 @@ export default function Home() {
               height={200}
               alt="Lynth - Official community logotype"
             />
-            <h1 className="text-white text-2xl tracking-widest">
-              Learn. Build. Innovate.
+            <h1 className="text-white text-4xl tracking-widest">
+              L&nbsp;Y&nbsp;N&nbsp;T&nbsp;H
             </h1>
-            <h2 className="text-white text-lg font-extralight mt-3">
-              {__('description')}
+            <h2 className="text-white text-2xl tracking-widest mt-4">
+              Learn. Build. Innovate.
             </h2>
+            <hr className="my-6"/>
+            <h3 className="text-white text-lg font-extralight mt-3">
+              {__('description')}
+            </h3>
           </div>
 
           <div className="w-full grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16">
