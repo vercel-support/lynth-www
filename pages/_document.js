@@ -1,6 +1,6 @@
 import Document, {Html, Head, Main, NextScript} from 'next/document';
 import React from 'react'
-import {GA_TRACKING_ID} from '../utils/gtag'
+import {GA_CONFIG, UA_CONFIG} from '../utils/gtag'
 import Hotjar from "../utils/hotjar";
 import Optimize from "../utils/optimize";
 
@@ -53,7 +53,7 @@ class MyDocument extends Document {
             <React.Fragment>
               <script
                 async
-                src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
               />
               <script
                 dangerouslySetInnerHTML={{
@@ -72,11 +72,7 @@ class MyDocument extends Document {
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
-
-                    gtag('config', '${GA_TRACKING_ID}', {
-                      page_path: window.location.pathname,
-                    });
-                  `,
+                    ` + GA_CONFIG + ` ` + UA_CONFIG,
                 }}
               />
               <Hotjar hjid={process.env.hjid} hjsv={process.env.hjsv}/>
