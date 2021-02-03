@@ -31,6 +31,11 @@ function App({Component, pageProps, err}) {
   useEffect(() => {
     const handleRouteChange = (url) => {
       gtag.pageview(url)
+      gtag.event({
+        action: 'route_change',
+        category: 'routing',
+        label: url
+      })
     }
     router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
