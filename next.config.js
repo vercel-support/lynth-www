@@ -23,6 +23,7 @@ const basePath = ''
 
 module.exports = withPWA(withSourceMaps({
   productionBrowserSourceMaps: true,
+  poweredByHeader: false,
   i18n: {
     locales: ['en', 'pl'],
     defaultLocale: 'en',
