@@ -43,8 +43,7 @@ export default function Home() {
             <h2 className="text-white text-2xl tracking-widest mt-4 font-extralight">
               Learn. Build. Innovate.
             </h2>
-            <hr className="my-6"/>
-            <h3 className="text-white text-lg font-light mt-3">
+            <h3 className="text-white text-lg font-light mt-9">
               {__('description')}
             </h3>
           </div>
