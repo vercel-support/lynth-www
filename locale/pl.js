@@ -3,7 +3,7 @@ export const pl = {
     description: "Społeczność programistów do nauki i dzielenia się doświadczeniem",
 
     available: "Dostępne",
-    comingSoon: "W krótce",
+    comingSoon: "Wkrótce",
 
     card1title: "Space",
     card1subtitle: "Dołącz do naszego jetBrains Space.",
