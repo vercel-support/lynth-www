@@ -65,7 +65,6 @@ class MyDocument extends Document {
                     `,
                 }}
               />
-              <Optimize optimize_id={process.env.optimize_id}/>
               <script
                 dangerouslySetInnerHTML={{
                   __html: `
