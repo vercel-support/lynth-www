@@ -1,7 +1,6 @@
 import Document, {Html, Head, Main, NextScript} from 'next/document';
 import React from 'react'
 import Hotjar from "../utils/hotjar";
-import Optimize from "../utils/optimize";
 import {GA_TRACKING_ID} from "../utils/gtag";
 
 class MyDocument extends Document {
@@ -18,7 +17,6 @@ class MyDocument extends Document {
     return (
       <Html lang="en" style={{background: '#000000'}}>
         <Head>
-          <Optimize optimize_id={process.env.optimize_id}/>
           <link rel="preconnect" href="https://www.lynth.io/_next/static/" crossOrigin=""/>
           <link rel="preconnect" href="https://in.hotjar.com" crossOrigin=""/>
           <link rel="preconnect" href="https://ws8.hotjar.com" crossOrigin=""/>
@@ -86,7 +84,7 @@ class MyDocument extends Document {
         {isProduction && (
           <noscript>
             <iframe src={"https://www.googletagmanager.com/ns.html?id=" + process.env.gtm_id}
-                    height="0" width="0" style={{display:'none', visibility:'hidden'}}/>
+                    height="0" width="0" style={{display: 'none', visibility: 'hidden'}}/>
           </noscript>
         )}
 
