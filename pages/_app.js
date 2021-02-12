@@ -25,7 +25,7 @@ export function reportWebVitals(metric) {
 
 function App({Component, pageProps, err}) {
   const router = useRouter()
-  const { locale, defaultLocale, pathname } = router
+  const {locale, defaultLocale, pathname} = router
   const localeCopy = locales[locale]
   const messages = localeCopy[pathname]
 
