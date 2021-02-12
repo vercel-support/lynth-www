@@ -12,12 +12,11 @@ init()
 
 export function reportWebVitals(metric) {
   if (process.env.NODE_ENV === 'production') {
-    window.gtag('event', name, {
-      event_category:
-        metric.label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
+    gtag.event({
+      action: metric.name,
+      category: metric.label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
+      label: metric.id,
       value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
-      event_label: metric.id,
-      non_interaction: true,
     })
   } else {
     console.log(metric)
