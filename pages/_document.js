@@ -2,6 +2,7 @@ import Document, {Html, Head, Main, NextScript} from 'next/document';
 import React from 'react'
 import Hotjar from "../utils/hotjar";
 import Optimize from "../utils/optimize";
+import {GA_TRACKING_ID} from "../utils/gtag";
 
 class MyDocument extends Document {
 
@@ -17,39 +18,6 @@ class MyDocument extends Document {
     return (
       <Html lang="en" style={{background: '#000000'}}>
         <Head>
-          {isProduction && (
-            <React.Fragment>
-              <Optimize optimize_id={process.env.optimize_id}/>
-              <script
-                async
-                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
-              />
-              <script
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    
-                    gtag('config', '${process.env.GA_TRACKING_ID}', {
-                      page_path: window.location.pathname,
-                    });
-                    `,
-                }}
-              />
-              <script
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                    })(window,document,'script','dataLayer','${process.env.gtm_id}');
-                  `,
-                }}
-              />
-            </React.Fragment>
-          )}
           <link rel="preconnect" href="https://www.lynth.io/_next/static/" crossOrigin=""/>
           <link rel="preconnect" href="https://in.hotjar.com" crossOrigin=""/>
           <link rel="preconnect" href="https://ws8.hotjar.com" crossOrigin=""/>
@@ -80,6 +48,35 @@ class MyDocument extends Document {
 
           {isProduction && (
             <React.Fragment>
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+              />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    
+                    gtag('config', '${GA_TRACKING_ID}', {
+                      page_path: window.location.pathname,
+                    });
+                    `,
+                }}
+              />
+              <Optimize optimize_id={process.env.optimize_id}/>
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer','${process.env.gtm_id}');
+                  `,
+                }}
+              />
               <Hotjar hjid={process.env.hjid} hjsv={process.env.hjsv}/>
             </React.Fragment>
           )}
