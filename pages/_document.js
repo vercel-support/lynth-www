@@ -18,6 +18,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en" style={{background: '#000000'}}>
         <Head>
+          <Optimize optimize_id={process.env.optimize_id}/>
           <link rel="preconnect" href="https://www.lynth.io/_next/static/" crossOrigin=""/>
           <link rel="preconnect" href="https://in.hotjar.com" crossOrigin=""/>
           <link rel="preconnect" href="https://ws8.hotjar.com" crossOrigin=""/>
