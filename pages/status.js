@@ -83,7 +83,7 @@ export default function Status({_data}) {
 
           <div>
             <h1 className="text-white text-4xl font-light">Lynth Infrastructure</h1>
-            <span className="px-4 py-2 mt-2 inline-flex text-md leading-5 font-normal rounded-full bg-gray-900 text-white">{__(_data.lynth.status.indicator)}</span>
+            <span className="px-4 py-2 mt-3 inline-flex text-sm leading-5 font-normal rounded-full bg-gray-900 text-white">{__(_data.lynth.status.indicator)}</span>
           </div>
 
           <div className="w-full lg:w-auto mt-4 lg:mt-0">
@@ -99,15 +99,23 @@ export default function Status({_data}) {
 
             {_data.lynth.components.map((component) => (
               <div key={component.id}
-                   className="border-2 border-transparent rounded-md px-4 lg:px-8 py-4 bg-gray-900 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
-                <p className="text-white text-xl pr-4">{component.name}</p>
-                <div className={styles.server}>
-                  <ul className={styles[component.status]}>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
+                   className="border-2 border-transparent rounded-md px-4 lg:px-5 py-4 lg:py-3 bg-gray-900 transition-all shadow-xl cursor-default flex flex-col items-start justify-start">
+
+                <div className="flex flex-row items-center justify-between w-full">
+                  <p className="text-white text-xl pr-4">{component.name}</p>
+                  <div className={styles.server}>
+                    <ul className={styles[component.status]}>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                    </ul>
+                  </div>
                 </div>
+
+                <div className="flex flex-row items-start justify-between w-full mt-1">
+                  <p className="text-gray-500 text-sm">{component.description}</p>
+                </div>
+
               </div>
             ))}
 
@@ -116,11 +124,11 @@ export default function Status({_data}) {
         </div>
 
         <div
-          className="relative flex flex-column flex-wrap lg:flex-row lg:items-center lg:justify-between mt-4 mb-1 lg:mt-8 lg:mb-3">
+          className="relative flex flex-column flex-wrap lg:flex-row lg:items-center lg:justify-between mt-4 mb-1 lg:mt-10 lg:mb-6">
 
           <div className="flex flex-col items-start">
             <h2 className="text-white text-2xl font-light">Global App Delivery</h2>
-            <span className="px-4 py-2 mt-2 inline-flex text-md leading-5 font-normal rounded-full bg-gray-900 text-white">{__(_data.gad.status.indicator)}</span>
+            <span className="px-4 py-2 mt-3 inline-flex text-sm leading-5 font-normal rounded-full bg-gray-900 text-white">{__(_data.gad.status.indicator)}</span>
           </div>
 
         </div>
@@ -133,7 +141,7 @@ export default function Status({_data}) {
             {_data.gad.components.map((component) => {
                 return component.group && component.id !== '1km35smx8p41' ?
                   <div key={component.id}
-                       className="border-2 border-transparent rounded-md px-4 lg:px-8 py-4 bg-gray-900 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
+                       className="border-2 border-transparent rounded-md px-4 lg:px-5 py-4 lg:py-3 bg-gray-900 transition-all shadow-xl cursor-default flex flex-row items-center justify-between">
                     <p className="text-white text-xl pr-4">{component.name}</p>
                     <div className={styles.server}>
                       <ul className={styles[component.status]}>
