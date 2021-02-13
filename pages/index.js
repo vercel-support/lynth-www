@@ -64,6 +64,9 @@ export default function Home() {
             <Link href='https://discord.lynth.io/'>
               <a
                 className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
+                onClick={() => {
+                  gtag.event({action: 'click', category: 'Discord CTA', label: 'Discord invitation redirect'})
+                }}
                 target="_blank" rel="noreferrer">
                 <p
                   className="px-3 py-1 mb-4 inline-flex text-md leading-5 font-normal rounded-full bg-green-100 text-black">{__('available')}</p>
