@@ -66,7 +66,7 @@ export default function Home() {
               <a
                 className="border-2 border-transparent rounded-md px-8 py-6 hover:border-blue-400 bg-gray-900 transition-all shadow-xl cursor-pointer"
                 onClick={() => {
-                  gtag.event({action: 'click', category: 'Discord CTA', label: 'Discord invitation redirect'})
+                  gtag.event({action: 'discord_inv', category: 'Discord CTA', label: 'Discord invitation redirect'})
                 }}
                 target="_blank" rel="noreferrer">
                 <p
