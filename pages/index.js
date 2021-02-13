@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from "next/router"
 import { useIntl } from "react-intl"
+import * as gtag from '../lib/gtag'
 
 export default function Home() {
   const { formatMessage } = useIntl()
