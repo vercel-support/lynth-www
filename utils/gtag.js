@@ -6,6 +6,11 @@ export const pageview = (url) => {
     window.gtag('config', GA_TRACKING_ID, {
       page_path: url,
     })
+  } else {
+    console.log({
+      name: 'ga_config',
+      value: url
+    })
   }
 }
 
@@ -16,6 +21,15 @@ export const event = ({action, category, label, value}) => {
       event_category: category,
       event_label: label,
       value: value,
+    })
+  } else {
+    console.log({
+      name: 'ga_event',
+      value: {
+        action,
+        category,
+        label,
+        value}
     })
   }
 }
