@@ -28,4 +28,7 @@ export const en = {
     major: "Partial System Outage",
     critical: "Major Service Outage",
   },
+  "/privacy-policy": {
+    backButton: "Back",
+  },
 }
