@@ -17,19 +17,6 @@
   </url>
 
   <url>
-    <loc>https://www.lynth.io/privacy-policy</loc>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.lynth.io/en/privacy-policy"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="pl"
-      href="https://www.lynth.io/pl/privacy-policy"
-    />
-  </url>
-
-  <url>
     <loc>https://www.lynth.io/status</loc>
     <xhtml:link
       rel="alternate"
