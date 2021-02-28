@@ -22,6 +22,19 @@ process.env.SENTRY_DSN = SENTRY_DSN
 const basePath = ''
 
 module.exports = withPWA(withSourceMaps({
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-powered-by',
+            value: 'Lynth',
+          },
+        ],
+      }
+    ]
+  },
   productionBrowserSourceMaps: true,
   poweredByHeader: false,
   i18n: {
