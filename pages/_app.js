@@ -1,14 +1,31 @@
 import "tailwindcss/tailwind.css"
+import * as Sentry from '@sentry/node'
+import { RewriteFrames } from '@sentry/integrations'
+import getConfig from 'next/config'
 import React, {useEffect} from 'react'
 import {useRouter} from 'next/router'
 import Head from 'next/head'
-import {init} from '../utils/sentry'
 import * as gtag from '../utils/gtag'
 import {DefaultSeo} from "next-seo"
 import {IntlProvider} from "react-intl"
 import * as locales from "../locale"
 
-init()
+if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
+  const config = getConfig()
+  const distDir = `${config.serverRuntimeConfig.rootDir}/.next`
+  Sentry.init({
+    enabled: process.env.NODE_ENV === 'production',
+    integrations: [
+      new RewriteFrames({
+        iteratee: (frame) => {
+          frame.filename = frame.filename.replace(distDir, 'app:///_next')
+          return frame
+        },
+      }),
+    ],
+    dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+  })
+}
 
 export function reportWebVitals(metric) {
   if (process.env.NODE_ENV === 'production') {
@@ -23,7 +40,7 @@ export function reportWebVitals(metric) {
   }
 }
 
-function App({Component, pageProps, err}) {
+export default function App({Component, pageProps, err}) {
   const router = useRouter()
   const {locale, defaultLocale, pathname} = router
   const localeCopy = locales[locale]
@@ -87,5 +104,3 @@ function App({Component, pageProps, err}) {
     </React.Fragment>
   )
 }
-
-export default App
