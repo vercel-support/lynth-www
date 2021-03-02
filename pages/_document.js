@@ -15,7 +15,7 @@ class MyDocument extends Document {
     const {isProduction} = this.props
 
     return (
-      <Html lang="en" style={{background: '#000000'}}>
+      <Html lang="en">
         <Head>
           <link rel="preconnect" href="https://www.lynth.io/_next/static/" crossOrigin=""/>
           <link rel="preconnect" href="https://in.hotjar.com" crossOrigin=""/>
@@ -80,7 +80,7 @@ class MyDocument extends Document {
           )}
         </Head>
 
-        <body className="bg-black">
+        <body>
         {isProduction && (
           <noscript>
             <iframe src={"https://www.googletagmanager.com/ns.html?id=" + process.env.gtm_id}

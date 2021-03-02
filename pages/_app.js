@@ -7,6 +7,8 @@ import * as gtag from '../utils/gtag'
 import {DefaultSeo} from "next-seo"
 import {IntlProvider} from "react-intl"
 import * as locales from "../locale"
+import Header from "../components/app/header";
+import Footer from "../components/app/footer";
 
 init()
 
@@ -81,7 +83,11 @@ function App({Component, pageProps, err}) {
         defaultLocale={defaultLocale}
         messages={messages}
       >
+        <Header/>
+
         <Component {...pageProps} err={err}/>
+
+        <Footer/>
       </IntlProvider>
 
     </React.Fragment>
