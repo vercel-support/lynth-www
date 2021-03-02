@@ -1,7 +1,3 @@
-import { init } from '../../utils/sentry'
-
-init()
-
 function work() {
   throw new Error('API Test 2')
 }
