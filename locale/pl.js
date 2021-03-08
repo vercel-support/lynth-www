@@ -19,7 +19,6 @@ export const pl = {
 
     card5title: "Warsztat",
     card5subtitle: "Chcesz się uczyć? Kliknij tutaj!",
-
   },
   "/status": {
     backButton: "Wróć",

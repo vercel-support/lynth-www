@@ -2,15 +2,12 @@ import "tailwindcss/tailwind.css"
 import React, {useEffect} from 'react'
 import {useRouter} from 'next/router'
 import Head from 'next/head'
-import {init} from '../utils/sentry'
 import * as gtag from '../utils/gtag'
 import {DefaultSeo} from "next-seo"
 import {IntlProvider} from "react-intl"
 import * as locales from "../locale"
-import Header from "../components/app/header";
-import Footer from "../components/app/footer";
-
-init()
+import Header from "../components/app/header"
+import Footer from "../components/app/footer"
 
 export function reportWebVitals(metric) {
   if (process.env.NODE_ENV === 'production') {
@@ -25,10 +22,10 @@ export function reportWebVitals(metric) {
   }
 }
 
-function App({Component, pageProps, err}) {
+export default function App({Component, pageProps, err}) {
   const router = useRouter()
   const {locale, defaultLocale, pathname} = router
-  const localeCopy = locales[locale]
+  const localeCopy = locales[locale.split('-')[0]]
   const messages = localeCopy[pathname]
 
   useEffect(() => {
@@ -73,25 +70,25 @@ function App({Component, pageProps, err}) {
           site_name: 'Lynth - Learn. Build. Innovate.',
         }}
         languageAlternates={[
-          {hreflang: 'en', href: '/'},
-          {hreflang: 'pl', href: '/pl'}
+          {hreflang: 'en-US', href: '/'},
+          {hreflang: 'pl-PL', href: '/pl-PL'}
         ]}
       />
 
       <IntlProvider
         locale={locale}
-        defaultLocale={defaultLocale}
+        defaultLocale={defaultLocale.split('-')[0]}
         messages={messages}
       >
+
         <Header/>
 
         <Component {...pageProps} err={err}/>
 
         <Footer/>
+
       </IntlProvider>
 
     </React.Fragment>
   )
 }
-
-export default App
