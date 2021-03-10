@@ -38,8 +38,8 @@ module.exports = withPWA(withSourceMaps({
   productionBrowserSourceMaps: true,
   poweredByHeader: false,
   i18n: {
-    locales: ['en-US', 'pl-PL'],
-    defaultLocale: 'en-US',
+    locales: ['en', 'pl'],
+    defaultLocale: 'en',
     localeDetection: true,
   },
   pwa: {

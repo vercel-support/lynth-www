@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {NextSeo} from "next-seo"
 import Image from "next/image"
-import Link from 'next/link'
 import * as styles from '../css/Error.module.css'
 
 class NotFoundError extends Component {
@@ -40,7 +39,8 @@ class NotFoundError extends Component {
 
         <div className="relative flex flex-col items-center lg:justify-center h-full w-full lg:h-screen z-0">
           <span className="transform scale-150">
-            <p data-text={'Not found'} className={'text-white font-medium ' + styles.glitch}>Not found</p>
+            <p data-text={'Error'} className={'text-white font-medium ' + styles.glitch}>Error</p>
+            <p></p>
           </span>
         </div>
 

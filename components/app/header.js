@@ -1,8 +1,6 @@
 import React from "react"
 import { useState } from 'react'
-import MegaMenu from "./partials/megamenu"
 import Link from 'next/link'
-import Image from 'next/image'
 import { Transition } from '@headlessui/react'
 
 export default function Header() {
@@ -10,174 +8,114 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="relative z-50">
-      <div className="absolute top-0 left-0 w-full">
-        <div
-          className="flex justify-between items-center max-w-7xl mx-auto px-4 py-3 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
-          <div className="flex justify-start lg:w-0 lg:flex-1">
-            <Link href={'/'}>
-              <a>
+    <header className="relative pb-36 bg-blue-gray-800">
+      <div className="absolute inset-0">
+        <img className="w-full h-full object-cover"
+             src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixqx=7270OjSOzP&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&&sat=-100"
+             alt=""/>
+             <div className="absolute inset-0 bg-blue-gray-800" style={{mixBlendMode: 'multiply'}} aria-hidden="true"/>
+      </div>
+      <div className="relative z-10">
+        <nav className="relative max-w-7xl mx-auto flex items-center justify-between pt-6 pb-2 px-4 sm:px-6 lg:px-8"
+             aria-label="Global">
+          <div className="flex items-center flex-1">
+            <div className="flex items-center justify-between w-full lg:w-auto">
+              <a href="#">
                 <span className="sr-only">Lynth</span>
-                   <Image
-                     src={'/images/logo/logo.svg'}
-                     width={50}
-                     height={50}
-                     className="h-8 w-auto sm:h-10"
-                     alt={''}
-                   />
+                <img className="h-8 w-auto sm:h-10"
+                     src={'/images/logo/logo.svg'} alt=""/>
               </a>
-            </Link>
-          </div>
-          <div className="-mr-2 -my-2 md:hidden">
-            <button type="button"
-                    className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-                    aria-expanded="false">
-              <span className="sr-only">Open menu</span>
-              <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                   stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
-              </svg>
-            </button>
-          </div>
-          <nav className="hidden md:flex space-x-10">
-            <div className="relative">
-
-              <button type="button"
-                      onClick={() => setIsOpen(!isOpen)}
-                      className="text-gray-500 group rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none"
-                      aria-expanded="false">
-                <span>Solutions</span>
-
-                <svg className="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500"
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clipRule="evenodd"/>
-                </svg>
-              </button>
-
-              <Transition
-                show={isOpen}
-                enter="transition ease-out duration-200"
-                enterFrom="opacity-0 -translate-y-1"
-                enterTo="opacity-100 translate-y-0"
-                leave="transition ease-in duration-150"
-                leaveFrom="opacity-100 translate-y-0"
-                leaveTo="opacity-0 -translate-y-1"
-              >
-                {(ref) => (
-                  <MegaMenu ref={ref}/>
-                )}
-              </Transition>
+              <div className="-mr-2 flex items-center lg:hidden">
+                <button type="button"
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="bg-blue-gray-900 bg-opacity-0 rounded-md p-2 inline-flex items-center justify-center text-white hover:bg-opacity-100 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white"
+                        aria-expanded="false">
+                  <span className="sr-only">Open main menu</span>
+                  <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                       stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
+                  </svg>
+                </button>
+              </div>
             </div>
+            <div className="hidden space-x-10 lg:flex lg:ml-10">
+              <a href="#" className="text-base font-medium text-white hover:text-blue-100">Changelog</a>
 
-            <Link href={'/'}>
-              <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Workshop
-              </a>
-            </Link>
+              <a href="#" className="text-base font-medium text-white hover:text-blue-100">About</a>
 
-          </nav>
-          <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0"/>
-        </div>
+              <a href="#" className="text-base font-medium text-white hover:text-blue-100">Parnters</a>
 
-        <div className="absolute z-30 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-          <div className="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-            <div className="pt-5 pb-6 px-5">
-              <div className="flex items-center justify-between">
-                <div>
-                  <Image
-                    src={'/images/logo/logo.svg'}
-                    width={50}
-                    height={50}
-                    className="h-8 w-auto sm:h-10"
-                    alt={''}
-                  />
+              <a href="#" className="text-base font-medium text-white hover:text-blue-100">News</a>
+            </div>
+          </div>
+          <div className="hidden lg:flex lg:items-center lg:space-x-6">
+            <a href="#"
+               className="py-2 px-6 bg-blue-500 border border-transparent rounded-md shadow-md text-base font-medium text-white hover:bg-blue-600">
+              Login
+            </a>
+          </div>
+        </nav>
+
+        <Transition
+          show={isOpen}
+          enter="duration-150 ease-out"
+          enterFrom="opacity-0 scale-95"
+          enterTo="opacity-100 scale-100"
+          leave="duration-100 ease-in"
+          leaveFrom="opacity-100 scale-100"
+          leaveTo="opacity-0 scale-95"
+        >
+          {(ref) => (
+
+            <div ref={ref} className="absolute top-0 inset-x-0 p-2 transition transform origin-top lg:hidden">
+              <div className="rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+                <div className="px-5 pt-4 flex items-center justify-between">
+                  <div>
+                    <img className="h-8 w-auto"
+                         src={'/images/logo/logo.svg'} alt=""/>
+                  </div>
+                  <div className="-mr-2">
+                    <button type="button"
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="bg-white rounded-md p-2 inline-flex items-center justify-center text-blue-gray-400 hover:bg-blue-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                      <span className="sr-only">Close menu</span>
+                      <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                           stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"/>
+                      </svg>
+                    </button>
+                  </div>
                 </div>
-                <div className="-mr-2">
-                  <button type="button"
-                          className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                    <span className="sr-only">Close menu</span>
-                    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                         stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                            d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                  </button>
+                <div className="pt-5 pb-6">
+                  <div className="px-2 space-y-1">
+                    <a href="#"
+                       className="block px-3 py-2 rounded-md text-base font-medium text-blue-gray-900 hover:bg-blue-gray-50">Changelog</a>
+
+                    <a href="#"
+                       className="block px-3 py-2 rounded-md text-base font-medium text-blue-gray-900 hover:bg-blue-gray-50">About</a>
+
+                    <a href="#"
+                       className="block px-3 py-2 rounded-md text-base font-medium text-blue-gray-900 hover:bg-blue-gray-50">Partners</a>
+
+                    <a href="#"
+                       className="block px-3 py-2 rounded-md text-base font-medium text-blue-gray-900 hover:bg-blue-gray-50">News</a>
+                  </div>
+                  <div className="mt-6 px-5">
+                    <a href="#"
+                       className="block text-center w-full py-2 px-4 border border-transparent rounded-md shadow bg-blue-500 text-white font-medium hover:bg-blue-600">Login</a>
+                  </div>
                 </div>
               </div>
-              <div className="mt-6">
-                <nav className="grid grid-cols-1 gap-7">
-                  <a href="#" className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
-                    <div
-                      className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-                      <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                           stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                              d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
-                      </svg>
-                    </div>
-                    <div className="ml-4 text-base font-medium text-gray-900">
-                      Inbox
-                    </div>
-                  </a>
-
-                  <a href="#" className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
-                    <div
-                      className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-                      <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                           stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                              d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
-                      </svg>
-                    </div>
-                    <div className="ml-4 text-base font-medium text-gray-900">
-                      Messaging
-                    </div>
-                  </a>
-
-                  <a href="#" className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
-                    <div
-                      className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-                      <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                           stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                              d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
-                      </svg>
-                    </div>
-                    <div className="ml-4 text-base font-medium text-gray-900">
-                      Live Chat
-                    </div>
-                  </a>
-
-                  <a href="#" className="-m-3 p-3 flex items-center rounded-lg hover:bg-gray-50">
-                    <div
-                      className="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-                      <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                           stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                              d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                      </svg>
-                    </div>
-                    <div className="ml-4 text-base font-medium text-gray-900">
-                      Knowledge Base
-                    </div>
-                  </a>
-                </nav>
-              </div>
             </div>
-            <div className="py-6 px-5">
-              <div className="grid grid-cols-2 gap-4">
-                <Link href={'/'}>
-                  <a className="text-base font-medium text-gray-900 hover:text-gray-700">
-                    Workshop
-                  </a>
-                </Link>
-              </div>
-              <div className="mt-6"/>
-            </div>
-          </div>
-        </div>
+
+          )}
+        </Transition>
+
+      </div>
+
+      <div className="relative mt-24 max-w-md mx-auto px-4 pb-32 sm:max-w-3xl sm:px-6 md:mt-32 lg:max-w-7xl lg:px-8">
+        <h1 className="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">Lynth Software</h1>
+        <p className="mt-6 max-w-3xl text-xl text-blue-gray-300">We specialize in serverless-based software development, and multi-cloud architecture.</p>
       </div>
     </header>
   )
